@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Uplaod Status</title>
+</head>
+<body>
+  <div th:if="${msg}">
+    <span th:text="${msg}"></span>
+  </div>
+  
+  	<a th:href="@{/product/adminlkjh/list}"
+		class="btn btn-success btn-lg col-4">
+		list Of all
+	</a>
+
+</body>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</html>

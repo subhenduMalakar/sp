@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Message Directory</title>
+</head>
+
+<body>
+
+
+<!-- <p th:text="'Time on the server is ' + ${theDate}" class="funny"/>  -->
+<a th:href="@{/product/dfile}"
+		class="btn btn-success btn-lg col-4">
+		Download Database as CSV file
+</a>
+
+<div class="container">
+
+	<h3>Message Directory</h3>
+	<hr>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Message</th>
+				<th>delete</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempMessage : ${message}">
+			
+				<td th:text="${tempMessage.id}" />	
+				<td th:text="${tempMessage.username}" />
+				<td th:text="${tempMessage.email}" />	
+				<td th:text="${tempMessage.mess}" />
+				<td><a th:href="@{'/product/mdelete/{id}'(id=${tempMessage.id})}" class="btn btn-danger btn-sm mb-3" method="GET">Delete</a><td/>	
+				
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+	
+	
+	
+
+<div class="container">
+
+	<h3>Email Directory</h3>
+	<hr>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Id</th>
+				<th>Email</th>
+				<th>delete</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempEmails : ${emails}">
+			
+				<td th:text="${tempEmails.id}" />	
+				<td th:text="${tempEmails.email}" />
+				<td><a th:href="@{'/product/edelete/{id}'(id=${tempEmails.id})}" class="btn btn-danger btn-sm mb-3" method="GET">Delete</a><td/>
+				
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>	
+	
+
+
+<div class="container">
+
+	<h3>Product Directory
+	<a th:href="@{/product/adminlkjh/pform}"
+		class="btn btn-success btn-lg col-4">
+		Add Product
+	</a>
+	
+	</h3>
+	
+
+	<hr>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Id</th>
+				<th>PName</th>
+				<th>Price</th>
+				<th>Link</th>
+				<th>Images 1</th>
+				<th>Images 2</th>
+				<th>Videos</th>
+				<th>Clicks</th>
+				<th>Description</th>
+				<th>delete</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempProduct : ${product}">
+			
+				<td th:text="${tempProduct.id}" />	
+				<td th:text="${tempProduct.pname}" />
+				<td th:text="${tempProduct.price}" />
+				<td th:text="${tempProduct.link}" />
+				<td th:text="${tempProduct.fimage}" />
+				<td th:text="${tempProduct.simage}" />
+				<td th:text="${tempProduct.videos}" />
+				<td th:text="${tempProduct.clicks}" />
+				<td th:text="${tempProduct.des}" />
+				<td><a th:href="@{'/product/pdelete/{id}'(id=${tempProduct.id})}" class="btn btn-danger btn-sm mb-3" method="GET">Delete</a><td/>
+				
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+	
+	
+	
+	
+</body>
+</html>
+
+
+	

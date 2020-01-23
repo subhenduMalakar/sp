@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+<style>
+  div {width:800px; margin:auto;}
+</style>
+</head>
+<body>
+
+  <div>
+    <h1>List of Files:</h1>
+    <div th:each="file: ${files}">
+      <a th:href="@{'/product/file/'+${file.getName()}}"><span th:text="${file.getName()}"/></a>
+      <span th:text="${file.length()/1024}"/>KB
+    </div>
+  </div>
+
+	<a th:href="@{/product/adminlkjh/list}"
+		class="btn btn-success btn-lg col-4">
+		list Of all
+	</a>
+</body>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</html>

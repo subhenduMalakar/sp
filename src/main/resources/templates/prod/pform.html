@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Save product</title>
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<h3>Enter Your Product</h3>
+		<hr>
+
+		<form action="#" th:action="@{/product/adminlkjh/psave}"
+						 th:object="${product}" method="POST">
+		
+			<p>Product Name
+			<input type="text" th:field="*{pname}"
+					class="form-control mb-4 col-4" placeholder="Product Name"></p><hr> 
+				
+			Product Price	
+			<input type="text" th:field="*{price}"
+					class="form-control mb-4 col-4" placeholder="Product Price"> <hr>  
+				
+			Product link	
+			<input type="text" th:field="*{link}"
+					class="form-control mb-4 col-4" placeholder="Product link">	<hr>   
+					
+			First Image Name
+			<input type="text" th:field="*{fimage}"
+					class="form-control mb-4 col-4" placeholder="Image Name 1"> <hr>   
+					
+			Second Image Name
+			<input type="text" th:field="*{simage}"
+					class="form-control mb-4 col-4" placeholder="Image Name 2"> <hr>  
+					 
+			Product Videos
+			<input type="text" th:field="*{videos}"
+					class="form-control mb-4 col-4" placeholder="Product Videos"> <hr>   
+					
+			Product clicks		
+			<input type="text" th:field="*{clicks}"
+					class="form-control mb-4 col-4" placeholder="Product clicks"> <hr>   
+					
+			Product Description
+			<input type="text" th:field="*{des}"
+					class="form-control mb-4 col-4" placeholder="Product Description">   
+				
+			<button type="submit" class="btn btn-info col-2">Save</button>
+						
+		</form>
+	
+		<hr>
+		
+		<a th:href="@{/product/adminlkjh/list}"
+		class="btn btn-success btn-lg col-4">
+		list Of all
+		</a>
+		
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
